@@ -1,0 +1,76 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+<style>
+
+
+    body{
+
+
+        background-color: #F5F5F5;
+
+    }
+
+</style>
+
+<br>
+<br>
+
+<div class="container  card  shadow-md p-5 form-layout">
+
+    <div class="text-center">
+
+        &nbsp; <h3> <i class="fa-regular fa-rectangle-list " area-hidden="true"></i> My orders</h3>
+
+        <hr>
+
+
+    </div>
+
+</div>
+
+<br>
+
+<div class="container  card  shadow-md p-5 form-layout">
+
+    
+        
+        {% for order in orders %}
+
+        <strong><i class="fa-regular fa-rectangle-list " area-hidden="true"></i> Order ID # {{order.id}}</strong>
+
+        <br> <br>
+
+        {{order.product}}
+
+        <br><br>
+
+        Quantity X {{order.quantity}}
+
+        <br><br>
+
+        $ {{order.price}}
+
+        <hr>
+
+        
+        {% endfor %}
+            
+
+
+
+</div>
+
+
+
+
+
+    
+{% endblock  %}
+    

@@ -1,0 +1,15 @@
+personal account  :
+
+email= honey@personal.com
+
+paypa; balance = 1000 dollars
+
+
+business account -
+
+email = honey@business.com
+
+balance = 5000 dollars
+
+
+clinet id - Af23q0XGtMi0nRdUpnXkzAiWLcdm0S4GSi4eKIChSa7V0GAMSM8jx52Mse5MbdFcChChXtOuk_ibLwQx

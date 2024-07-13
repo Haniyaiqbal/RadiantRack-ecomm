@@ -1,0 +1,65 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+    <!-- Introduction section -->
+    <section class="py-4 text-center container">
+
+        <br>
+        
+                <h5 class="display-4 mb-4">Welcome to RadiantRack</h5>
+                <p class="lead text-muted">Serving you a feast of vibrant grids.</p>
+
+                
+                
+                <a href="{% url 'register' %}" class="btn btn-primary btn-lg mt-3 rounded">Create an account</a>
+            
+        
+    </section>
+
+    <br>
+    <br>
+
+    <section class="py-4 text-center container">
+      <form action="{% url 'search-products' %}" method="GET">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search products..." name="query">
+              <button class="btn btn-primary rounded" type="submit" >Search</button>
+          </div>
+      </form>
+  </section>
+
+  <br>
+  <br>
+
+  
+    <!-- All products section -->
+    <div class="album py-5 card bg-custom-section">
+        <div class="container">
+            <h2 class="text-center pb-3">All Products</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for product in all_products %}
+                <div class="col">
+                    <div class="card border-primary mb-3">
+                       
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.title }}</h5>
+                            <p class="card-text">${{ product.price }}</p>
+                            <a href="{{ product.get_absolute_url }}" class="btn btn-primary rounded">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    
+{% endblock %}
